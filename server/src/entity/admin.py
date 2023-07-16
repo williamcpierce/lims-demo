@@ -14,6 +14,7 @@ class SchemaAdmin(ModelAdmin):
 class SampleAdmin(ModelAdmin, ImportExportModelAdmin):
     fields = ("schema", "_id", "name", "containers")
     list_display = ["name", "schema", "_get_containers"]
+    list_filter = ["schema"]
     readonly_fields = ["name", "containers"]
     search_fields = ["name", "schema"]
 
