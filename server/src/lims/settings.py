@@ -15,6 +15,9 @@ import os
 from pathlib import Path
 
 from django.templatetags.static import static
+from django.urls import reverse_lazy
+from django.utils.translation import gettext_lazy as _
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -148,6 +151,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 UNFOLD = {
     "SITE_TITLE": "LIMS Demo",
     "SITE_HEADER": "LIMS Demo",
+    "SITE_URL": None,
     "SITE_SYMBOL": "Genetics",  # symbol from icon set
     "COLORS": {
         "primary": {
@@ -162,5 +166,70 @@ UNFOLD = {
             "800": "0 216 164",
             "900": "0 216 164",
         }
+    },
+    "SIDEBAR": {
+        "show_search": False,
+        "show_all_applications": False,
+        "navigation": [
+            {
+                "title": _("Registry"),
+                "separator": False,
+                "items": [
+                    {
+                        "title": _("Samples"),
+                        "icon": "genetics",
+                        "link": reverse_lazy("admin:entity_sample_changelist"),
+                    },
+                    {
+                        "title": _("Schemas"),
+                        "icon": "schema",
+                        "link": reverse_lazy("admin:entity_schema_changelist"),
+                    },
+                ],
+            },
+            {
+                "title": _("Inventory"),
+                "separator": True,
+                "items": [
+                    {
+                        "title": _("Containers"),
+                        "icon": "labs",
+                        "link": reverse_lazy("admin:inventory_container_changelist"),
+                    },
+                    {
+                        "title": _("Locations"),
+                        "icon": "location_on",
+                        "link": reverse_lazy("admin:inventory_location_changelist"),
+                    },
+                ],
+            },
+            {
+                "title": _("Compliance"),
+                "separator": True,
+                "items": [
+                    {
+                        "title": _("Audit Log"),
+                        "icon": "library_books",
+                        "link": reverse_lazy("admin:auditlog_logentry_changelist"),
+                    },
+                ],
+            },
+            {
+                "title": _("Auth"),
+                "separator": True,
+                "items": [
+                    {
+                        "title": _("Users"),
+                        "icon": "people",
+                        "link": reverse_lazy("admin:auth_user_changelist"),
+                    },
+                    {
+                        "title": _("Groups"),
+                        "icon": "groups",
+                        "link": reverse_lazy("admin:auth_group_changelist"),
+                    },
+                ],
+            },
+        ],
     },
 }

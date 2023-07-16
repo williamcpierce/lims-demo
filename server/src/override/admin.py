@@ -29,3 +29,6 @@ admin.site.unregister(LogEntry)
 admin.site.register(User, UserAdmin)
 admin.site.register(Group, GroupAdmin)
 admin.site.register(LogEntry, LogEntryAdmin)
+
+admin.site.index_title = "Dashboard"
+admin.site.site_url = None
