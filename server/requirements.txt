@@ -4,3 +4,4 @@ sqlparse==0.4.4
 psycopg2==2.9.6
 django-unfold @ https://github.com/williamcpierce/django-unfold/tarball/main
 django-mptt==0.14.0
+django-import-export==3.2.0

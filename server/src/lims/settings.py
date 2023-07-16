@@ -40,6 +40,7 @@ ALLOWED_HOSTS = json.loads(
 # Application definition
 
 INSTALLED_APPS = [
+    "unfold.contrib.import_export",
     "unfold",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -47,6 +48,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "import_export",
     "mptt",
     "entity",
     "inventory",
