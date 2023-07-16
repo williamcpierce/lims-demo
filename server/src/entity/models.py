@@ -2,7 +2,7 @@ from django.db import models
 from inventory.models import Container
 
 
-class Type(models.Model):
+class Schema(models.Model):
     name = models.CharField(max_length=50, blank=True, null=True)
     prefix = models.CharField(max_length=3, unique=True)
     digits = models.IntegerField()
@@ -17,8 +17,8 @@ class Sample(models.Model):
         null=True,
         blank=True,
     )
-    type = models.ForeignKey(
-        Type,
+    schema = models.ForeignKey(
+        Schema,
         on_delete=models.CASCADE,
         null=False,
         blank=True,
@@ -28,10 +28,19 @@ class Sample(models.Model):
         through=Container.contents.through,
         blank=True,
     )
+    name = models.CharField(
+        max_length=50,
+        blank=True,
+        null=True,
+    )
 
     def __str__(self):
+        return self.name
+
+    def save(self, *args, **kwargs):
         padded_id = str(self._id).rjust(self.type.digits, "0")
-        return f"{self.type.prefix}{padded_id}"
+        self.name = f"{self.type.prefix}{padded_id}"
+        super(Sample, self).save(*args, **kwargs)
 
     def get_containers(self):
         return ", ".join([str(c) for c in self.containers.all()])
