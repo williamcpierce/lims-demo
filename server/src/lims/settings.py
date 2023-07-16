@@ -14,6 +14,8 @@ import os
 
 from pathlib import Path
 
+from django.templatetags.static import static
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -135,3 +137,24 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+UNFOLD = {
+    "SITE_TITLE": "LIMS",
+    "SITE_HEADER": "LIMS Demo",
+    "SITE_SYMBOL": "Genetics",  # symbol from icon set
+    "COLORS": {
+        "primary": {
+            "50": "0 216 164",
+            "100": "0 216 164",
+            "200": "0 216 164",
+            "300": "0 216 164",
+            "400": "0 216 164",
+            "500": "0 216 164",
+            "600": "0 216 164",
+            "700": "0 216 164",
+            "800": "0 216 164",
+            "900": "0 216 164",
+        }
+    },
+}
