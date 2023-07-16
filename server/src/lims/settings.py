@@ -204,11 +204,11 @@ UNFOLD = {
                 ],
             },
             {
-                "title": _("Compliance"),
+                "title": _("Audit Log"),
                 "separator": True,
                 "items": [
                     {
-                        "title": _("Audit Log"),
+                        "title": _("Log Entries"),
                         "icon": "library_books",
                         "link": reverse_lazy("admin:auditlog_logentry_changelist"),
                     },
