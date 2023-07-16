@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "import_export",
     "mptt",
+    "auditlog",
     "entity",
     "inventory",
     "user",

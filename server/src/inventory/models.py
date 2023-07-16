@@ -1,3 +1,4 @@
+from auditlog.registry import auditlog
 from django.db import models
 from mptt.models import MPTTModel
 
@@ -39,3 +40,7 @@ class Container(models.Model):
 
     def get_contents(self):
         return ", ".join([str(c) for c in self.contents.all()])
+
+
+auditlog.register(Location)
+auditlog.register(Container)

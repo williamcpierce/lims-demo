@@ -1,3 +1,4 @@
+from auditlog.registry import auditlog
 from django.db import models
 from inventory.models import Container
 
@@ -47,3 +48,7 @@ class Sample(models.Model):
 
     def get_containers(self):
         return ", ".join([str(c) for c in self.containers.all()])
+
+
+auditlog.register(Schema)
+auditlog.register(Sample)
