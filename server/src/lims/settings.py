@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     "mptt",
     "entity",
     "inventory",
+    "user",
 ]
 
 MIDDLEWARE = [
