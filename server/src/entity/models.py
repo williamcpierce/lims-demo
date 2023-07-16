@@ -35,12 +35,14 @@ class Sample(models.Model):
     )
 
     def __str__(self):
+        return self.generate_name()
+
+    def generate_name(self):
         padded_id = str(self._id).rjust(self.schema.digits, "0")
         return f"{self.schema.prefix}{padded_id}"
 
     def save(self, *args, **kwargs):
-        padded_id = str(self._id).rjust(self.schema.digits, "0")
-        self.name = f"{self.schema.prefix}{padded_id}"
+        self.name = self.generate_name()
         super(Sample, self).save(*args, **kwargs)
 
     def get_containers(self):
