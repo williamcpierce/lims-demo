@@ -143,7 +143,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 UNFOLD = {
-    "SITE_TITLE": "LIMS",
+    "SITE_TITLE": "LIMS Demo",
     "SITE_HEADER": "LIMS Demo",
     "SITE_SYMBOL": "Genetics",  # symbol from icon set
     "COLORS": {
