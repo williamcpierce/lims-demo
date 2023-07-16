@@ -32,6 +32,10 @@ class Container(models.Model):
         null=True,
         blank=True,
     )
+    contents = models.ManyToManyField("entity.Sample", blank=True)
 
     def __str__(self):
         return self.barcode
+
+    def get_contents(self):
+        return ", ".join([str(c) for c in self.contents.all()])

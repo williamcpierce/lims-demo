@@ -9,8 +9,14 @@ class LocationAdmin(ModelAdmin):
 
 
 class ContainerAdmin(ModelAdmin):
-    list_display = ["barcode", "location"]
+    list_display = ["barcode", "location", "_get_contents"]
     search_fields = ["barcode", "location"]
+    filter_horizontal = ("contents",)
+
+    def _get_contents(self, obj):
+        return obj.get_contents()
+
+    _get_contents.short_description = "Contents"
 
 
 admin.site.register(Location, LocationAdmin)
