@@ -54,7 +54,7 @@ INSTALLED_APPS = [
     "import_export",
     "mptt",
     "auditlog",
-    "entity",
+    "registry",
     "inventory",
     "override",
 ]
@@ -178,12 +178,12 @@ UNFOLD = {
                     {
                         "title": _("Samples"),
                         "icon": "genetics",
-                        "link": reverse_lazy("admin:entity_sample_changelist"),
+                        "link": reverse_lazy("admin:registry_sample_changelist"),
                     },
                     {
                         "title": _("Schemas"),
                         "icon": "schema",
-                        "link": reverse_lazy("admin:entity_schema_changelist"),
+                        "link": reverse_lazy("admin:registry_schema_changelist"),
                     },
                 ],
             },

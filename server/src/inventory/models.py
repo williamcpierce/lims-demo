@@ -33,7 +33,7 @@ class Container(models.Model):
         null=True,
         blank=True,
     )
-    contents = models.ManyToManyField("entity.Sample", blank=True)
+    contents = models.ManyToManyField("registry.Sample", blank=True)
 
     def __str__(self):
         return self.barcode
