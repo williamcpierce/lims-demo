@@ -7,15 +7,18 @@ from .models import Sample, Schema
 
 
 class SchemaAdmin(ModelAdmin):
-    list_display = ["name", "prefix"]
+    list_display = ["name", "prefix", "digits"]
     search_fields = ["name", "prefix"]
 
 
 class SampleAdmin(ModelAdmin, ImportExportModelAdmin):
+    fields = ("schema", "_id", "name", "containers")
     list_display = ["name", "schema", "_get_containers"]
+    readonly_fields = ["name", "containers"]
     search_fields = ["name", "schema"]
+
     filter_horizontal = ("containers",)
-    readonly_fields = ["containers"]
+
     import_form_class = ImportForm
     export_form_class = ExportForm
 
