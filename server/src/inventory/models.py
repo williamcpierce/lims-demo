@@ -5,7 +5,11 @@ from mptt.models import MPTTModel
 class Location(MPTTModel):
     name = models.CharField(max_length=50, unique=False)
     parent = models.ForeignKey(
-        "self", on_delete=models.CASCADE, null=True, blank=True, related_name="children"
+        "self",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name="children",
     )
 
     @property
@@ -23,7 +27,10 @@ class Location(MPTTModel):
 class Container(models.Model):
     barcode = models.CharField(max_length=50, unique=True)
     location = models.ForeignKey(
-        Location, on_delete=models.CASCADE, null=True, blank=True
+        Location,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
     )
 
     def __str__(self):
