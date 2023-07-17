@@ -182,7 +182,7 @@ UNFOLD = {
                     },
                     {
                         "title": _("Types"),
-                        "icon": "schema",
+                        "icon": "settings",
                         "link": reverse_lazy("admin:registry_type_changelist"),
                     },
                 ],

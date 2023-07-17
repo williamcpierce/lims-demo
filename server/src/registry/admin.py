@@ -9,12 +9,12 @@ from .resources import SampleResource
 
 
 class TypeAdmin(ModelAdmin):
-    list_display = ["name", "prefix", "digits"]
+    list_display = ["name", "prefix"]
     search_fields = ["name", "prefix"]
 
 
 class SampleAdmin(ModelAdmin, ImportExportModelAdmin):
-    fields = ("name", "type", "alias" "containers")
+    fields = ("name", "type", "alias", "containers")
     list_display = ["name", "alias", "_get_containers"]
     list_filter = ["type"]
     readonly_fields = ["name", "containers"]

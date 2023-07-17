@@ -6,7 +6,6 @@ from inventory.models import Container
 class Type(models.Model):
     name = models.CharField(max_length=50, blank=True, null=True)
     prefix = models.CharField(max_length=3, unique=True)
-    digits = models.IntegerField(verbose_name="ID Digits")
 
     def __str__(self):
         return self.prefix
@@ -40,10 +39,11 @@ class Sample(models.Model):
         return self.generate_name()
 
     def generate_name(self):
-        padded_id = str(self.id).rjust(self.type.digits, "0")
+        padded_id = str(self.id).rjust(3, "0")
         return f"{self.type.prefix}{padded_id}"
 
     def save(self, *args, **kwargs):
+        super(Sample, self).save(*args, **kwargs)
         self.name = self.generate_name()
         super(Sample, self).save(*args, **kwargs)
 
