@@ -6,9 +6,20 @@ from inventory.models import Container
 class Type(models.Model):
     name = models.CharField(max_length=50, blank=True, null=True)
     prefix = models.CharField(max_length=3, unique=True)
+    fields = models.ManyToManyField("Field", blank=True)
 
     def __str__(self):
         return self.prefix
+
+    def get_fields(self):
+        return ", ".join([str(c) for c in self.fields.all()])
+
+
+class Field(models.Model):
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
 
 
 class Sample(models.Model):
@@ -53,3 +64,4 @@ class Sample(models.Model):
 
 auditlog.register(Type)
 auditlog.register(Sample)
+auditlog.register(Field)
