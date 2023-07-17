@@ -148,6 +148,8 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
+# Unfold settings
+
 UNFOLD = {
     "SITE_TITLE": "LIMS Demo",
     "SITE_HEADER": "LIMS Demo",
@@ -234,5 +236,7 @@ UNFOLD = {
     },
 }
 
+
+# Import-Export settings
 
 IMPORT_EXPORT_SKIP_ADMIN_CONFIRM = True
