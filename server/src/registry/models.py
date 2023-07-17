@@ -45,6 +45,21 @@ class Sample(models.Model):
         null=True,
         verbose_name="ID",
     )
+    related = models.ForeignKey(
+        "Sample",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="related_related",
+    )
+    dna = models.ForeignKey(
+        "Sample",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        verbose_name="DNA",
+        related_name="dna_related",
+    )
 
     def __str__(self):
         return self.generate_name()
