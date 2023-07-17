@@ -3,6 +3,7 @@ from django.contrib.auth.models import User, Group
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.admin import GroupAdmin as BaseGroupAdmin
 
+from auditlog.registry import auditlog
 from auditlog.models import LogEntry
 from auditlog.admin import LogEntryAdmin as BaseLogEntryAdmin
 from unfold.admin import ModelAdmin
@@ -32,3 +33,6 @@ admin.site.register(LogEntry, LogEntryAdmin)
 
 admin.site.index_title = "Dashboard"
 admin.site.site_url = None
+
+auditlog.register(User)
+auditlog.register(Group)

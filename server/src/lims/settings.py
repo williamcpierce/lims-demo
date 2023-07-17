@@ -181,9 +181,9 @@ UNFOLD = {
                         "link": reverse_lazy("admin:registry_sample_changelist"),
                     },
                     {
-                        "title": _("Schemas"),
+                        "title": _("Types"),
                         "icon": "schema",
-                        "link": reverse_lazy("admin:registry_schema_changelist"),
+                        "link": reverse_lazy("admin:registry_type_changelist"),
                     },
                 ],
             },
@@ -233,3 +233,6 @@ UNFOLD = {
         ],
     },
 }
+
+
+IMPORT_EXPORT_SKIP_ADMIN_CONFIRM = True
