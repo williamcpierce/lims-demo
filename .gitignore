@@ -4,3 +4,9 @@ __pycache__
 *.env
 
 .DS_store
+
+*.sqlite3
+venv
+.terraform
+.terraform.lock.hcl
+terraform.*
