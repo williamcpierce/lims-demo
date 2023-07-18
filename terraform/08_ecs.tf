@@ -24,6 +24,7 @@ resource "aws_ecs_task_definition" "app" {
     rds_password            = var.rds_password
     rds_hostname            = aws_db_instance.production.address
     allowed_hosts           = var.allowed_hosts
+    secret_key              = var.secret_key
     }
   )
   depends_on = [aws_db_instance.production]

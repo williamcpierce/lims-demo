@@ -71,10 +71,12 @@ variable "deployment_minimum_healthy_percent" {
   default     = 50
 }
 variable "allowed_hosts" {
-  description = "Domain name for allowed hosts"
+  description = "Domain names for allowed hosts"
   default     = "williampierce.io www.williampierce.io"
 }
-
+variable "secret_key" {
+  description = "Secret key for Django"
+}
 
 # logs
 
