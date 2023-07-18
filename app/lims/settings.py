@@ -33,9 +33,15 @@ else:
     SECRET_KEY = "django-insecure-^z16o6g&-*kv%q8_tkt5@&iiketx&k@zzp^*89byj_!=s+h=a!"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+if "DEBUG" in os.environ:
+    DEBUG = True
+else:
+    DEBUG = False
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split()
+if "ALLOWED_HOSTS" in os.environ:
+    ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split()
+else:
+    ALLOWED_HOSTS = ["localhost", "0.0.0.0"]
 
 
 # Application definition
@@ -108,8 +114,12 @@ if "RDS_DB_NAME" in os.environ:
 else:
     DATABASES = {
         "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": os.getenv("POSTGRES_DB", default="postgres"),
+            "USER": os.getenv("POSTGRES_USER", default="postgres"),
+            "PASSWORD": os.getenv("POSTGRES_PASSWORD", default="postgres"),
+            "HOST": os.getenv("POSTGRES_HOST", default="db"),
+            "PORT": os.getenv("POSTGRES_PORT", default="5432"),
         }
     }
 
@@ -148,8 +158,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = "/staticfiles/"
-STATIC_ROOT = BASE_DIR / "staticfiles"
+if "DEBUG" in os.environ:
+    STATIC_URL = "static/"
+else:
+    STATIC_URL = "/staticfiles/"
+    STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
