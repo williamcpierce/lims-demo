@@ -57,6 +57,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "lims.middleware.HealthCheckMiddleware",
     "django.middleware.security.SecurityMiddleware",
+    "lims.middleware.WwwRedirectMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",

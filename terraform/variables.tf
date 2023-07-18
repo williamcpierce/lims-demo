@@ -72,7 +72,7 @@ variable "deployment_minimum_healthy_percent" {
 }
 variable "allowed_hosts" {
   description = "Domain name for allowed hosts"
-  default     = "williampierce.io"
+  default     = "williampierce.io www.williampierce.io"
 }
 
 
