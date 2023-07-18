@@ -10,3 +10,4 @@ venv
 .terraform
 .terraform.lock.hcl
 terraform.*
+*.sh
