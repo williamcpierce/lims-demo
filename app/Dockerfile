@@ -21,5 +21,5 @@ RUN pip install -r requirements.txt
 # copy project
 COPY . .
 
-# collect static files
-RUN python manage.py collectstatic --no-input
+# migrate and collect static files
+ENTRYPOINT [ "sh", "./entrypoint.sh" ]

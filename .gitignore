@@ -10,4 +10,6 @@ venv
 .terraform
 .terraform.lock.hcl
 terraform.*
-*.sh
+
+deploy.sh
+secrets.md
