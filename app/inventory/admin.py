@@ -4,6 +4,7 @@ from unfold.admin import ModelAdmin
 from unfold.contrib.import_export.forms import ExportForm, ImportForm
 
 from .models import Container, Location
+from .resources import ContainerResource
 
 
 class LocationAdmin(ModelAdmin):
@@ -17,6 +18,7 @@ class ContainerAdmin(ModelAdmin, ImportExportModelAdmin):
 
     filter_horizontal = ("contents",)
 
+    resource_classes = [ContainerResource]
     import_form_class = ImportForm
     export_form_class = ExportForm
 
