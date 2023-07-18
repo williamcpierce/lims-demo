@@ -1,17 +1,25 @@
 # pull official base image
-FROM python:latest
+FROM python:3.11.4-slim-bullseye
+
+# set work directory
+WORKDIR /usr/src/app
 
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-# install updates
-RUN apt-get update && apt-get upgrade -y
+# install psycopg2 dependencies
+RUN apt-get update \
+    && apt-get -y install gcc postgresql \
+    && apt-get clean
 
-# install packages
-COPY ./requirements.txt requirements.txt
-RUN pip install --upgrade pip && pip install -r requirements.txt
+# install dependencies
+RUN pip install --upgrade pip
+COPY ./requirements.txt .
+RUN pip install -r requirements.txt
 
-# set source
-COPY ./src /src
-WORKDIR /src
+# copy project
+COPY . .
+
+# collect static files
+RUN python manage.py collectstatic --no-input

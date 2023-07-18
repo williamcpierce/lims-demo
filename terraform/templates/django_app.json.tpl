@@ -13,7 +13,7 @@
         "protocol": "tcp"
       }
     ],
-    "command": ["gunicorn", "-w", "3", "-b", ":8000", "hello_django.wsgi:application"],
+    "command": ["gunicorn", "-w", "3", "-b", ":8000", "lims.wsgi:application"],
     "environment": [
       {
         "name": "RDS_DB_NAME",
