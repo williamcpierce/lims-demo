@@ -245,3 +245,8 @@ UNFOLD = {
 # Import-Export settings
 
 IMPORT_EXPORT_SKIP_ADMIN_CONFIRM = True
+
+
+# CSRF
+
+CSRF_TRUSTED_ORIGINS = ["https://williampierce.io", "https://www.williampierce.io"]
