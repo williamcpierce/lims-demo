@@ -30,7 +30,9 @@ def deploy(cluster, service):
     new_task_arn = response["taskDefinition"]["taskDefinitionArn"]
 
     response = client.update_service(
-        cluster=cluster, service=service, taskDefinition=new_task_arn,
+        cluster=cluster,
+        service=service,
+        taskDefinition=new_task_arn,
     )
 
 
