@@ -35,12 +35,13 @@ resource "aws_ecs_task_definition" "app" {
 }
 
 resource "aws_ecs_service" "production" {
-  name            = "${var.ecs_cluster_name}-service"
-  cluster         = aws_ecs_cluster.production.id
-  task_definition = aws_ecs_task_definition.app.arn
-  iam_role        = aws_iam_role.ecs-service-role.arn
-  desired_count   = var.app_count
-  depends_on      = [aws_alb_listener.ecs-alb-http-listener, aws_iam_role_policy.ecs-service-role-policy]
+  name                               = "${var.ecs_cluster_name}-service"
+  cluster                            = aws_ecs_cluster.production.id
+  task_definition                    = aws_ecs_task_definition.app.arn
+  iam_role                           = aws_iam_role.ecs-service-role.arn
+  desired_count                      = var.app_count
+  deployment_minimum_healthy_percent = var.deployment_minimum_healthy_percent
+  depends_on                         = [aws_alb_listener.ecs-alb-http-listener, aws_iam_role_policy.ecs-service-role-policy]
 
   load_balancer {
     target_group_arn = aws_alb_target_group.default-target-group.arn
