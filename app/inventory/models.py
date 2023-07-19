@@ -4,7 +4,7 @@ from mptt.models import MPTTModel
 
 
 class Location(MPTTModel):
-    name = models.CharField(max_length=50, unique=False)
+    name = models.CharField(max_length=50, unique=True)
     parent = models.ForeignKey(
         "self",
         on_delete=models.CASCADE,

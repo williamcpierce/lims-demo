@@ -52,13 +52,9 @@ class Sample(models.Model):
         blank=True,
         related_name="related_related",
     )
-    dna = models.ForeignKey(
-        "Sample",
-        on_delete=models.SET_NULL,
+    sequence = models.TextField(
         null=True,
         blank=True,
-        verbose_name="DNA",
-        related_name="dna_related",
     )
 
     def __str__(self):

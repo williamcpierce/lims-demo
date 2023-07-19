@@ -9,7 +9,7 @@ class ContainerResource(resources.ModelResource):
     location = fields.Field(
         column_name="location",
         attribute="location",
-        widget=ForeignKeyWidget(Location, field="prefix"),
+        widget=ForeignKeyWidget(Location, field="name"),
     )
 
     contents = fields.Field(

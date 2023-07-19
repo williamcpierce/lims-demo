@@ -10,7 +10,12 @@ class SampleResource(resources.ModelResource):
         attribute="type",
         widget=ForeignKeyWidget(Type, field="prefix"),
     )
+    related = fields.Field(
+        column_name="related",
+        attribute="related",
+        widget=ForeignKeyWidget(Sample, field="name"),
+    )
 
     class Meta:
         model = Sample
-        fields = ("id", "type", "alias")
+        fields = ("id", "type", "alias", "name", "related", "sequence")

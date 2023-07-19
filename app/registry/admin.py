@@ -49,12 +49,6 @@ class SampleAdmin(ModelAdmin, ImportExportModelAdmin):
         additional_fields = (str(c) for c in getattr(sample_type, "fields").all())
         return base_fields + tuple(additional_fields)
 
-    def get_form(self, request, obj=None, **kwargs):
-        form = super(SampleAdmin, self).get_form(request, obj, **kwargs)
-        if "dna" in self.get_fields(request=request, obj=obj):
-            form.base_fields["dna"].queryset = Sample.objects.filter(type__prefix="DNA")
-        return form
-
     _get_containers.short_description = "Containers"
 
 
