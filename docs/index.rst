@@ -1,19 +1,26 @@
 .. include:: ../README.rst
 
-Welcome to Lumache's documentation!
+Welcome to documentation for my Lims Demo project
 ===================================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+**LIMS Demo** is full-stack project, built over the course of 1 week, 
+which aims to showcase a minimum viable product for a 
+Laboratory Information Management System (LIMS).
+The intention behind this project is to demonstrate my development 
+capabilities, especially with regards to backend and infrastructure, 
+and to do so in a time efficient manner. 
 
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+`Live Site <https://williampierce.io/>`_
+Username: demo
+Password: demo
+
+Check out the :doc:`usage` section for further instructions on how 
+to view and test this demo.
 
 .. note::
 
-   This project is under active development.
+   This project, while production-ready, is for demonstration 
+   purposes only. It is not designed for use with actual samples or data. 
 
 Contents
 --------
@@ -22,4 +29,6 @@ Contents
 
    Home <self>
    usage
-   api
+   frontend
+   backend
+   infrastructure
