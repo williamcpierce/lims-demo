@@ -10,9 +10,9 @@ The intention behind this project is to demonstrate my development
 capabilities, especially with regards to backend and infrastructure, 
 and to do so in a time efficient manner. 
 
-`Live Site <https://williampierce.io/>`_
-Username: demo
-Password: demo
+| `Live Site <https://williampierce.io/>`_
+| Username: demo
+| Password: demo
 
 Check out the :doc:`usage` section for further instructions on how 
 to view and test this demo.
