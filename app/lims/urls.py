@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+# Default admin path is changed from /admin to the base url
 urlpatterns = [
     path("", admin.site.urls),
 ]

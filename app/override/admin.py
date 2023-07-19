@@ -11,6 +11,10 @@ from unfold.forms import AdminPasswordChangeForm, UserChangeForm, UserCreationFo
 
 
 class UserAdmin(BaseUserAdmin, ModelAdmin):
+    """
+    Override default forms with forms provided by Unfold admin.
+    """
+
     form = UserChangeForm
     add_form = UserCreationForm
     change_password_form = AdminPasswordChangeForm
@@ -24,6 +28,7 @@ class LogEntryAdmin(BaseLogEntryAdmin, ModelAdmin):
     pass
 
 
+# Replace default User/Group and LogEntry admins with Unfold admin
 admin.site.unregister(User)
 admin.site.unregister(Group)
 admin.site.unregister(LogEntry)
@@ -31,8 +36,9 @@ admin.site.register(User, UserAdmin)
 admin.site.register(Group, GroupAdmin)
 admin.site.register(LogEntry, LogEntryAdmin)
 
-admin.site.index_title = "Dashboard"
-admin.site.site_url = None
+admin.site.index_title = "Dashboard"  # Rename index to dashboard
+admin.site.site_url = None  # Hide "visit site" link
 
+# Register User and Group models with the auditlog app
 auditlog.register(User)
 auditlog.register(Group)

@@ -42,5 +42,6 @@ class Container(models.Model):
         return ", ".join([str(c) for c in self.contents.all()])
 
 
+# Register Location and Container models with the auditlog app
 auditlog.register(Location)
 auditlog.register(Container)

@@ -65,6 +65,11 @@ class Sample(models.Model):
         return f"{self.type.prefix}{padded_id}"
 
     def save(self, *args, **kwargs):
+        """
+        Overrides the default model save behavior, so that a custom name
+        can be generated which includes the PK (which is only available
+        after the first save operation).
+        """
         super(Sample, self).save(*args, **kwargs)
         self.name = self.generate_name()
         super(Sample, self).save(*args, **kwargs)
@@ -73,6 +78,7 @@ class Sample(models.Model):
         return ", ".join([str(c) for c in self.containers.all()])
 
 
+# Register Type, Sample, and Field models with the auditlog app
 auditlog.register(Type)
 auditlog.register(Sample)
 auditlog.register(Field)
