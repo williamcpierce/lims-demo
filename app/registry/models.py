@@ -32,7 +32,7 @@ class Sample(models.Model):
         Type,
         on_delete=models.CASCADE,
         null=False,
-        blank=True,
+        blank=False,
     )
     containers = models.ManyToManyField(
         Container,
