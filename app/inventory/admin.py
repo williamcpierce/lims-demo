@@ -14,7 +14,7 @@ class LocationAdmin(ModelAdmin):
 
 class ContainerAdmin(ModelAdmin, ImportExportModelAdmin):
     list_display = ["barcode", "location", "_get_contents"]
-    search_fields = ["barcode", "location"]
+    search_fields = ["barcode"]
 
     filter_horizontal = ("contents",)
 
