@@ -9,6 +9,7 @@ it comes to basic functionality and security, which allows me to spend more time
 application logic. 
 
 A few Django features of particular value to me are:
+
 #. An active developer community, which means many components are available as packages. For 
 example, this app uses packages for handling data import/export, optimizing hierarchical data 
 structures for the location feature, and providing an audit log.
