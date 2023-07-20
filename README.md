@@ -5,5 +5,5 @@ I aimed to demonstrate my development capabilities by quickly and efficiently bu
 minimum viable product for a Laboratory Information Management System (LIMS).
 
 For more information, visit the documentation page at 
-[lims-demo.readthedocs.io/](https://lims-demo.readthedocs.io/),or email me at 
+[lims-demo.readthedocs.io/](https://lims-demo.readthedocs.io/), or email me at 
 [will@williampierce.io](mailto:will@williampierce.io)
