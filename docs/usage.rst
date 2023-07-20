@@ -35,7 +35,7 @@ load the additional fields from the type definition.
 Samples may also be registered in bulk using the import tool. To do so, 
 construct a file (such as .csv or .xlsx) in the following format:
 
-.. list-table:: Sample Import
+.. list-table::
    :widths: 20 20 20 20 20
    :header-rows: 1
 
@@ -49,14 +49,12 @@ construct a file (such as .csv or .xlsx) in the following format:
      - ATCTTGTGGAAAGGACGAAACACCGCGAAGAACCTCTTCCCAAGAGTTTTAGAGCTAGAAATAGCAAGTT3
    * - PRO
      - Cas12a
-     - 
-     - 
 
 | Where:
 | "type" is the prefix for the desired sample type (required)
 | "alias" is an alternate name for the sample (optional)
 | "related" is the ID of another related sample (optional)
-/ "sequence" is a DNA/RNA/AA sequence for the sample (optional)
+| "sequence" is a DNA/RNA/AA sequence for the sample (optional)
 
 Container Registry
 ^^^^^^^^^^^^
