@@ -123,6 +123,7 @@ Django. They can be accessed via URLs in the following formats:
 | williampierce.io/api/<table>/<pk>/
 
 For example:
+
 | List all samples: `williampierce.io/api/sample/ <https://williampierce.io/api/sample/>`_
 | Detail on one sample: `williampierce.io/api/sample/2/ <https://williampierce.io/api/sample/2/>`_
 | JSON format: `williampierce.io/api/sample/?format=json <https://williampierce.io/api/sample/?format=json>`_
