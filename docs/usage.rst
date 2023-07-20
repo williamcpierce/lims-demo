@@ -7,7 +7,7 @@ Access
 This demo is hosted live on my website, where you can use these credentials to log in to a 
 demo account:
 
-| URL: `williampierce.io <https://williampierce.io/>`_
+| URL: `williampierce.io/lims <https://williampierce.io/lims>`_
 | Username: demo
 | Password: demo
 
@@ -112,3 +112,18 @@ Django provides models for users and user groups out of the box. These enable at
 actions taken in the LIMS (such as in the audit log), and limiting of permissions for a 
 given group of users. This could be used to restrict the ability of lab users to delete 
 sample types or locations, restricting those actions to administrators and power users. 
+
+API
+^^^^^^^^^^^^
+GET endpoints are provided for the Sample, Type, Container, and Location tables. These 
+routes are built using Django REST Framework, a module for building RESTful APIs in 
+Django. They can be accessed via URLs in the following formats:
+
+| williampierce.io/api/<table>/
+| williampierce.io/api/<table>/<pk>/
+
+For example:
+| List all samples: `williampierce.io/api/sample/ <https://williampierce.io/api/sample/>`_
+| Detail on one sample: `williampierce.io/api/sample/2/ <https://williampierce.io/api/sample/2/>`_
+| JSON format: `williampierce.io/api/sample/?format=json <https://williampierce.io/api/sample/?format=json>`_
+
