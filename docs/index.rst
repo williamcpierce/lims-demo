@@ -6,6 +6,7 @@ Home
 **LIMS Demo** is full-stack project, built and deployed over the 
 course of **one week**, which aims to showcase a minimum viable product 
 for a Laboratory Information Management System (LIMS).
+
 The intention behind this project is to demonstrate my development 
 capabilities, especially with regards to backend and infrastructure, 
 and to do so in a time efficient manner. 
