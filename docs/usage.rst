@@ -39,7 +39,7 @@ Samples may also be registered in bulk using the import tool. To do so, construc
      - sequence
    * - OLI
      - Cas9 Guide 29
-     - PRO002
+     - PRO003
      - ATCTTGTGGAAA[...]
    * - PRO
      - Cas12a
