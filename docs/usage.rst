@@ -4,9 +4,9 @@ Usage
 Access
 ------------
 
-To test LIMS Demo, you can access it here:
+To test this demo, you can access it here:
 
-| `Live Site <https://williampierce.io/>`_
+| URL: `williampierce.io <https://williampierce.io/>`_
 | Username: demo
 | Password: demo
 
@@ -32,6 +32,9 @@ To register a new sample, click the green + icon in the top right,
 select a sample type, and then click "Save and Continue Editing" to 
 load the additional fields from the type definition. 
 
+Samples IDs are automatically assigned by combining the type prefix 
+with the primary key of that sample in the sample database table. 
+
 Samples may also be registered in bulk using the import tool. To do so, 
 construct a file (such as .csv or .xlsx) in the following format:
 
@@ -46,9 +49,11 @@ construct a file (such as .csv or .xlsx) in the following format:
    * - OLI
      - Cas9 Guide 29
      - PRO002
-     - ATCTTGTGGAAAGGACGAAACACCGCGAAGAACCTCTTCCCAAGAGTTTTAGAGCTAGAAATAGCAAGTT3
+     - ATCTTGTGGAAA[...]
    * - PRO
      - Cas12a
+     - 
+     - 
 
 | Where:
 | "type" is the prefix for the desired sample type (required)
@@ -65,7 +70,7 @@ Containers can be registered either via the registration form, or
 bulk uploaded with the import tool, with an input file in the 
 following format:
 
-.. list-table:: Container Import
+.. list-table::
    :widths: 34 33 33
    :header-rows: 1
 
