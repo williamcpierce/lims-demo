@@ -22,7 +22,8 @@ on top (such as the ability to import and export).
 Unfold Admin
 ----------------
 The default styling for Django's admin site is perfectly adequate for back-office 
-use, but leaves a lot to be desired when used as the main page of an app. To improve 
-the styling, this site uses `Unfold Admin <https://unfoldadmin.com/>`_, a theme designed 
-specifically for Django's admin site. This theme is written using Tailwind CSS, and can 
-be easily extended and customized. 
+use, but leaves a lot to be desired when used as the main page of an app. 
+
+To improve the styling, this site uses `Unfold Admin <https://unfoldadmin.com/>`_, 
+a theme designed specifically for Django's admin site. This theme is written using 
+Tailwind CSS, and can be easily extended and customized. 

@@ -4,7 +4,8 @@ Usage
 Access
 ------------
 
-To test this demo, you can access it here:
+This demo is hosted live on my website, where you can log in to a demo 
+account with the provided credentials:
 
 | URL: `williampierce.io <https://williampierce.io/>`_
 | Username: demo
@@ -13,13 +14,6 @@ To test this demo, you can access it here:
 
 Features
 ------------
-
-Sample Type Definitions
-^^^^^^^^^^^^
-Users can define their own sample types. These definitions consist of a 
-type prefix, which is prepended to each sample of that type (e.g. PRO for 
-protein), and a selection of form fields to show on the registration form 
-for that sample type. 
 
 Sample Registry
 ^^^^^^^^^^^^
@@ -59,6 +53,17 @@ construct a file (such as .csv or .xlsx) in the following format:
 | "alias" is an alternate name for the sample (optional)
 | "related" is the ID of another related sample (optional)
 | "sequence" is a DNA/RNA/AA sequence for the sample (optional)
+
+Sample Type Definitions
+^^^^^^^^^^^^
+Users of this app can define their own sample types. These definitions 
+consist of a type prefix, which is prepended to each sample of that type 
+(e.g. PRO for protein), and a selection of form fields to show on the 
+registration form for that sample type. 
+
+Field customization allows for users to specify which data can be 
+associated with each sample type - for example, one might include the 
+"Sequence" field for oligonucleotides but omit it for chemical reagents. 
 
 Container Registry
 ^^^^^^^^^^^^
