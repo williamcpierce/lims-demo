@@ -4,8 +4,8 @@ Usage
 Access
 ------------
 
-This demo is hosted live on my website, where you can log in to a demo 
-account with the provided credentials:
+This demo is hosted live on my website, where you can use these credentials to log in to a 
+demo account:
 
 | URL: `williampierce.io <https://williampierce.io/>`_
 | Username: demo
@@ -17,19 +17,17 @@ Features
 
 Sample Registry
 ^^^^^^^^^^^^
-This view is where samples are registered, and allows for searching and 
-filtering of the samples (by type) while browsing. Click on a sample ID 
-to see all the available fields for that sample, as only a subset are 
-shown in the main table. 
+This view is where samples are registered, and allows for searching and filtering of the 
+samples (by type) while browsing. Click on a sample ID to see all the available fields for 
+that sample, as only a subset are shown in the main table. 
 
-To register a new sample, click the green + icon in the top right, 
-select a sample type, and then click "Save and Continue Editing" to 
-load the additional fields from the type definition. Samples IDs are 
-automatically assigned by combining the type prefix with the primary 
-key of that sample in the sample database table. 
+To register a new sample, click the green + icon in the top right, select a sample type, and 
+then click "Save and Continue Editing" to load the additional fields from the type definition. 
+Samples IDs are automatically assigned by combining the type prefix with the primary key of 
+that sample in the sample database table, to ensure uniqueness. 
 
-Samples may also be registered in bulk using the import tool. To do so, 
-construct a file (such as .csv or .xlsx) in the following format:
+Samples may also be registered in bulk using the import tool. To do so, construct a file 
+(such as .csv or .xlsx) in the following format:
 
 .. list-table::
    :widths: 20 30 20 30 
@@ -56,23 +54,21 @@ construct a file (such as .csv or .xlsx) in the following format:
 
 Sample Type Definitions
 ^^^^^^^^^^^^
-Users of this app can define their own sample types. These definitions 
-consist of a type prefix, which is prepended to each sample of that type 
-(e.g. PRO for protein), and a selection of form fields to show on the 
-registration form for that sample type. 
+Users of this app can define their own sample types. These definitions consist of a type 
+prefix, which is prepended to the ID of each sample of that type (e.g. PRO for protein), and 
+a selection of form fields to show on the registration form for that sample type. 
 
-Field customization allows for users to specify which data can be 
-associated with each sample type - for example, one might include the 
-"Sequence" field for oligonucleotides but omit it for chemical reagents. 
+Field customization allows for users to specify which data can be associated with each sample 
+type - for example, one might include the "Sequence" field for oligonucleotides but omit it 
+for chemical reagents. 
 
 Container Registry
 ^^^^^^^^^^^^
-Functioning similar to the sample registry, this view shows all 
-registered containers, and is where new containers are registered. 
+Functioning similar to the sample registry, this view shows all registered containers, and is 
+where new containers are registered. 
 
-Containers can be registered either via the registration form, or 
-bulk uploaded with the import tool, with an input file in the 
-following format:
+Containers can be registered either via the registration form, or bulk uploaded with the 
+import tool, with an input file in the following format:
 
 .. list-table::
    :widths: 34 33 33
@@ -95,19 +91,24 @@ following format:
 
 Location Registry
 ^^^^^^^^^^^^
-The location registry uses a hierarchical structure to define 
-locations where containers can reside. Each location has an optional 
-parent, and multiple locations can have the same parent location. 
+The location registry uses a hierarchical structure to define locations where containers can 
+reside. Each location has an optional parent, and multiple locations can have the same parent 
+location. 
 
-This hierarchical data is represented in the database using modified 
-preorder tree transversal, a technique which optimizes retrieval of 
-the tree structure (the main operation needed for this use case) at 
-the expense of efficiency when inserting or modifying the tree 
-(comparatively rare). 
+This hierarchical data is represented in the database using modified preorder tree transversal, 
+a technique which optimizes retrieval of the tree structure (the main operation needed for 
+this use case) at the expense of efficiency when inserting or modifying the tree (comparatively 
+rare). 
 
 Audit Trail
 ^^^^^^^^^^^^
-All operations performed on any of the other tables are recorded 
-as log entries in an audit trail table. This helps ensure 
-data integrity, and can also assist in identifying unintended changes 
-so they can be reverted. 
+All operations performed on any of the other tables are recorded as log entries in an audit 
+trail table. This helps ensure data integrity, and can also assist in identifying unintended 
+changes so they can be reverted. 
+
+Users and Groups
+^^^^^^^^^^^^
+Django provides models for users and user groups out of the box. These enable attibution of 
+actions taken in the LIMS (such as in the audit log), and limiting of permissions for a 
+given group of users. This could be used to restrict the ability of lab users to delete 
+sample types or locations, restricting those actions to administrators and powers users. 
