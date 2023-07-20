@@ -100,6 +100,12 @@ a technique which optimizes retrieval of the tree structure (the main operation 
 this use case) at the expense of efficiency when inserting or modifying the tree (comparatively 
 rare). 
 
+Electronic Lab Notebook
+^^^^^^^^^^^^
+The lab notebook view allows users to create formatted notebook entries. Author and creation 
+date fields are automatically populated when creating a new entry. Any modification to the entry
+also triggers an automatic update of the last updated at/by fields.  
+
 Audit Trail
 ^^^^^^^^^^^^
 All operations performed on any of the other tables are recorded as log entries in an audit 

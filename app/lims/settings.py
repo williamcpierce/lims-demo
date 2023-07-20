@@ -48,6 +48,7 @@ else:
 
 INSTALLED_APPS = [
     "unfold.contrib.import_export",
+    "unfold.contrib.forms",
     "unfold",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -63,6 +64,7 @@ INSTALLED_APPS = [
     "inventory",
     "override",
     "api",
+    "eln",
 ]
 
 MIDDLEWARE = [
@@ -226,6 +228,17 @@ UNFOLD = {
                         "title": _("Locations"),
                         "icon": "location_on",
                         "link": reverse_lazy("admin:inventory_location_changelist"),
+                    },
+                ],
+            },
+            {
+                "title": _("Lab Notebook"),
+                "separator": True,
+                "items": [
+                    {
+                        "title": _("Notebook Entries"),
+                        "icon": "menu_book",
+                        "link": reverse_lazy("admin:eln_entry_changelist"),
                     },
                 ],
             },
