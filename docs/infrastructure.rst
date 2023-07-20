@@ -20,9 +20,9 @@ AWS infrastructure for this project alongside its code. Once defined, this Terra
 configuration can be used to provision, update, and tear down actual AWS resources with a 
 single command. 
 
-Managing my infrastrure definition and deployment through Terraform means that infrastructure 
-is implemented exactly as I intend, and allows me to iterate on infrastructure the same way I 
-do with other code for this application. 
+Managing my infrastructure definition and deployment through Terraform means that 
+infrastructure is always implemented exactly as written, and allows me to iterate on 
+infrastructure the same way I do with other code for this application. 
 
 AWS
 ----------------

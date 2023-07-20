@@ -19,9 +19,9 @@ Sample Registry
 ^^^^^^^^^^^^
 This view is where samples are registered, and allows for searching and filtering of the 
 samples (by type) while browsing. Click on a sample ID to see all the available fields for 
-that sample, as only a subset are shown in the main table. 
+that sample, as only a subset is shown in the main table. 
 
-To register a new sample, click the green + icon in the top right, select a sample type, and 
+To register a new sample, click the green + icon on the top right, select a sample type, and 
 then click "Save and Continue Editing" to load the additional fields from the type definition. 
 Samples IDs are automatically assigned by combining the type prefix with the primary key of 
 that sample in the sample database table, to ensure uniqueness. 
@@ -103,12 +103,12 @@ rare).
 Audit Trail
 ^^^^^^^^^^^^
 All operations performed on any of the other tables are recorded as log entries in an audit 
-trail table. This helps ensure data integrity, and can also assist in identifying unintended 
-changes so they can be reverted. 
+trail table. This helps ensure data integrity, and can also assist with reverting unintended 
+changes.  
 
 Users and Groups
 ^^^^^^^^^^^^
-Django provides models for users and user groups out of the box. These enable attibution of 
+Django provides models for users and user groups out of the box. These enable attribution of 
 actions taken in the LIMS (such as in the audit log), and limiting of permissions for a 
 given group of users. This could be used to restrict the ability of lab users to delete 
-sample types or locations, restricting those actions to administrators and powers users. 
+sample types or locations, restricting those actions to administrators and power users. 

@@ -18,7 +18,7 @@ as Python objects. This makes it easier to manage, query, and migrate data, all 
 raw SQL queries.
 #. The usage of Python as its language, which results in highly readable and maintainable code. 
 When used for scientific applications, the code can also be understood by scientists familiar 
-with Python, and their pre-existing python scripts can easily integrated into the app.
+with Python, and their pre-existing Python scripts can easily integrated into the app.
 
 PostgreSQL
 ----------------
