@@ -30,10 +30,9 @@ shown in the main table.
 
 To register a new sample, click the green + icon in the top right, 
 select a sample type, and then click "Save and Continue Editing" to 
-load the additional fields from the type definition. 
-
-Samples IDs are automatically assigned by combining the type prefix 
-with the primary key of that sample in the sample database table. 
+load the additional fields from the type definition. Samples IDs are 
+automatically assigned by combining the type prefix with the primary 
+key of that sample in the sample database table. 
 
 Samples may also be registered in bulk using the import tool. To do so, 
 construct a file (such as .csv or .xlsx) in the following format:
