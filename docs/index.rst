@@ -3,7 +3,7 @@
 Home
 ===================================
 
-**LIMS Demo** is full-stack project, built and deployed over the course of **5 days**, where 
+**LIMS Demo** is full-stack project, built and deployed over the course of **one week**, where 
 I aimed to demonstrate my development capabilities by quickly and efficiently building a 
 minimum viable product for a Laboratory Information Management System (LIMS).
 
