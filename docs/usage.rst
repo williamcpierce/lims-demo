@@ -39,7 +39,7 @@ Samples may also be registered in bulk using the import tool. To do so,
 construct a file (such as .csv or .xlsx) in the following format:
 
 .. list-table::
-   :widths: 20 20 20 20 20
+   :widths: 20 30 20 30 
    :header-rows: 1
 
    * - type
@@ -53,7 +53,7 @@ construct a file (such as .csv or .xlsx) in the following format:
    * - PRO
      - Cas12a
      - 
-     - 
+     -  
 
 | Where:
 | "type" is the prefix for the desired sample type (required)
