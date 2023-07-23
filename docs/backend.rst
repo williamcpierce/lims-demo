@@ -11,14 +11,14 @@ application logic.
 A few Django features of particular value to me are:
 
 #. An active developer community, which means many components are available as packages. For 
-example, this app uses packages for handling data import/export, optimizing hierarchical data 
-structures for the location feature, and providing an audit log.
+   example, this app uses packages for handling data import/export, optimizing hierarchical data 
+   structures for the location feature, and providing an audit log.
 #. The inclusion of an object-relational mapping (ORM) tool, which represents database models 
-as Python objects. This makes it easier to manage, query, and migrate data, all without writing 
-raw SQL queries.
+   as Python objects. This makes it easier to manage, query, and migrate data, all without writing 
+   raw SQL queries.
 #. The usage of Python as its language, which results in highly readable and maintainable code. 
-When used for scientific applications, the code can also be understood by scientists familiar 
-with Python, and their pre-existing Python scripts can easily integrated into the app.
+   When used for scientific applications, the code can also be understood by scientists familiar 
+   with Python, and their pre-existing Python scripts can easily integrated into the app.
 
 PostgreSQL
 ----------------
